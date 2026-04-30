@@ -6,6 +6,7 @@ class AudioParamMock {
   exponentialRampToValueAtTime = vi.fn();
   value = 0;
 }
+
 class AudioNodeMock {
   connect = vi.fn();
   disconnect = vi.fn();
@@ -14,6 +15,7 @@ class AudioNodeMock {
   frequency = new AudioParamMock();
   gain = new AudioParamMock();
 }
+
 class AudioContextMock {
   currentTime = 0;
   destination = new AudioNodeMock();
@@ -26,5 +28,6 @@ class AudioContextMock {
   createBuffer = vi.fn(() => ({ getChannelData: () => new Float32Array(1024) }));
   decodeAudioData = vi.fn(() => Promise.resolve({ duration: 1, sampleRate: 44100 }));
 }
+
 globalThis.AudioContext = AudioContextMock;
 globalThis.webkitAudioContext = AudioContextMock;
