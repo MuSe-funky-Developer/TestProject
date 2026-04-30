@@ -1,0 +1,137 @@
+:root {
+  --color-bg: #1a1a1a;
+  --color-surface: #2a2a2a;
+  --color-fg: #f0f0f0;
+  --color-muted: #888;
+  --color-step: #444;
+  --color-step-border: #5a5a5a;
+  --color-accent: #4ecdc4;
+  --color-active: #ff6b6b;
+  --gap: 0.5rem;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.transport {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  padding: var(--gap);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+}
+
+.transport button {
+  padding: 0.5rem 1rem;
+  font: inherit;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.transport button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#track-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.track {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) 1fr;
+  gap: var(--gap);
+  padding: var(--gap);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+}
+
+.track-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.track-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.track-steps {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 4px;
+  align-items: stretch;
+}
+
+.step {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--color-step);
+  border: 1px solid var(--color-step-border);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.step:hover {
+  border-color: var(--color-accent);
+}
+
+.step.is-active {
+  background: var(--color-active);
+  border-color: var(--color-active);
+}
+
+.volume {
+  width: 100%;
+}
+
+.tempo {
+  width: 5rem;
+}
+
+.sample {
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.clear-sample {
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+  font-size: 0.8rem;
+  background: var(--color-step);
+  color: var(--color-fg);
+  border: 1px solid var(--color-step-border);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.clear-sample:hover {
+  background: var(--color-step-border);
+}
