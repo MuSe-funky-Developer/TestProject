@@ -1,0 +1,16 @@
+{
+  "name": "testystuff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "serve": "npx http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "jsdom": "^24.0.0",
+    "@vitest/coverage-v8": "^1.6.0"
+  }
+}
