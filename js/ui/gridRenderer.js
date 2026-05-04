@@ -3,7 +3,7 @@ export function renderGrid(rootEl, state, { onStepClick, onPitchChange }) {
 
   for (const track of state.tracks) {
     const row = document.createElement('div');
-    row.className = 'track-row';
+    row.className = 'track';
     row.dataset.trackId = track.id;
 
     for (let i = 0; i < track.steps.length; i++) {

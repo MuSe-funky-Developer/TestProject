@@ -1,1 +1,1 @@
-{"version":"1.6.1","results":[[":tests/lib/eventBus.test.js",{"duration":11,"failed":false}],[":tests/lib/logger.test.js",{"duration":0,"failed":false}],[":tests/audio/hihatVoice.test.js",{"duration":7,"failed":false}]]}
+{"version":"1.6.1","results":[[":tests/ui/trackControls.test.js",{"duration":39,"failed":false}],[":tests/ui/styles.test.js",{"duration":4,"failed":false}]]}
