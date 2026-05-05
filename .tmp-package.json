@@ -1,0 +1,13 @@
+{
+  "name": "testystuff-tmp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --config .tmp-vitest.config.js"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "jsdom": "^24.0.0"
+  }
+}
