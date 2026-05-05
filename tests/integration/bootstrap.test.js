@@ -147,6 +147,20 @@ describe('bootstrap — initial state via loadState ?? createDefaultState', () =
     expect(state.tracks).toHaveLength(4);
     expect(state.tracks.map((t) => t.name)).toEqual(['Kick', 'Snare', 'HiHat', 'Bass']);
   });
+
+  it('rendert den restaurierten State ins DOM (nicht den Default-State)', async () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(makeValidStoredState()));
+    document.body.innerHTML = APP_HTML;
+    const mod = await import('../../js/main.js');
+    await mod.bootstrap(document, createFakeWin());
+    const stepButtons = document.querySelectorAll('.step');
+    expect(stepButtons.length).toBe(16);
+    const restoredActiveStep = document.querySelector(
+      '.step[data-track-id="restored-kick"][data-step-index="5"]',
+    );
+    expect(restoredActiveStep).toBeTruthy();
+    expect(restoredActiveStep.classList.contains('is-active')).toBe(true);
+  });
 });
 
 describe('bootstrap — UI-Wiring & renderAll bei state:changed', () => {
